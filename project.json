@@ -1,0 +1,10 @@
+{
+  "name": "client-lapause",
+  "org": "neurolia-agency",
+  "client": "La Pause Restaurant",
+  "type": "client",
+  "status": "en-attente",
+  "description": "Site restaurant La Pause",
+  "stack": ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS 4"],
+  "access": "core-dev"
+}
