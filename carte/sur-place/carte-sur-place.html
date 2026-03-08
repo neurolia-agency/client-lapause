@@ -35,22 +35,13 @@
       grid-template-columns: 148.5mm 148.5mm;
       overflow: hidden;
       background-color: #210c09;
-      background-image: url(assets/texture-fond.png);
+      background-image: url(../assets/texture-fond.png);
       background-size: cover;
       background-position: center;
       background-blend-mode: overlay;
     }
 
-    /* Noise overlay */
-    .sheet::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      background-repeat: repeat;
-      pointer-events: none;
-      z-index: 1;
-    }
+    /* Noise overlay — removed for PDF compatibility (feTurbulence SVG filter not supported) */
 
     /* Fold line (screen only) */
     .sheet::after {
@@ -97,17 +88,16 @@
     }
 
     .cover-logo {
-      width: 52mm;
+      width: 41.6mm;
       height: auto;
       flex-shrink: 0;
-      margin-top: 4mm;
       margin-bottom: 4mm;
       filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
     }
 
     .cover-divider-gradient {
       width: 100mm;
-      height: 0.5px;
+      height: 1px;
       background: linear-gradient(135deg, #e4b443 0%, #c85a49 100%);
       border: none;
       border-radius: 1px;
@@ -135,6 +125,7 @@
     .cover-img-burger {
       position: relative;
       z-index: 1;
+      border: 2px solid rgba(214, 143, 89, 0.25);
     }
 
     .cover-img-burger img {
@@ -142,7 +133,6 @@
       width: 55mm;
       height: 73mm;
       object-fit: cover;
-      border: 1.5px solid #d68f59;
     }
 
     .cover-img-pates {
@@ -153,7 +143,7 @@
       width: 47mm;
       height: 47mm;
       overflow: hidden;
-      border: 1.5px solid #d68f59;
+      border: 2px solid rgba(214, 143, 89, 0.25);
       box-shadow: -3px 3px 12px rgba(0,0,0,0.45);
     }
 
@@ -200,7 +190,7 @@
 
     .cover-divider-thin {
       width: 80mm;
-      height: 0.5px;
+      height: 1px;
       background-color: #ddd5c5;
       border: none;
       border-radius: 1px;
@@ -231,16 +221,18 @@
       display: flex;
       flex-direction: column;
       padding: 10mm 10mm 8mm 10mm;
-      gap: 3.5mm;
+      gap: 2.5mm;
     }
 
     /* ── Section Titles ── */
     .section-title {
       font-family: 'Fraunces', Georgia, serif;
-      font-weight: 600;
+      font-weight: 400;
+      font-style: italic;
       font-size: 13pt;
-      font-variation-settings: 'opsz' 24, 'SOFT' 50, 'WONK' 1;
+      font-variation-settings: 'SOFT' 80, 'WONK' 1;
       color: #e4b443;
+      text-align: center;
       margin-bottom: 1.5mm;
       padding-bottom: 1mm;
       position: relative;
@@ -262,7 +254,6 @@
       margin-bottom: 15px;
       width: 100%;
       overflow: hidden;
-      border: 1.5px solid #d68f59;
       box-shadow: 0 2px 10px rgba(0,0,0,0.4);
     }
 
@@ -304,6 +295,30 @@
       width: 18mm;
     }
 
+    /* ── Two-column price (Simple / Double) ── */
+    .price-header th {
+      font-size: 6.5pt;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(228,180,67,0.7);
+      text-align: right;
+      padding-bottom: 1mm;
+      border-bottom: 0.1mm solid rgba(250,247,240,0.1);
+    }
+
+    .price-header th:first-child {
+      text-align: left;
+    }
+
+    .col-price-sm {
+      text-align: right;
+      font-weight: 700;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+      width: 14mm;
+    }
+
     .product-note {
       font-size: 7.5pt;
       font-style: italic;
@@ -314,12 +329,18 @@
     .supplement {
       padding-left: 3mm;
       font-style: italic;
-      font-size: 7.5pt;
+      font-size: 8pt;
       color: rgba(250,247,240,0.55);
+    }
+
+    .supplement-highlight {
+      color: rgba(228,180,67,0.85);
+      font-weight: 500;
     }
 
     /* ── Formule Box ── */
     .formule-box {
+      margin-top: auto;
       border: 0.5px solid rgba(228,180,67,0.5);
       border-radius: 3mm;
       padding: 3.5mm 4mm;
@@ -327,9 +348,10 @@
 
     .formule-box .formule-title {
       font-family: 'Fraunces', Georgia, serif;
-      font-weight: 600;
+      font-weight: 400;
+      font-style: italic;
       font-size: 11pt;
-      font-variation-settings: 'opsz' 24, 'SOFT' 50, 'WONK' 1;
+      font-variation-settings: 'SOFT' 80, 'WONK' 1;
       color: #e4b443;
       margin-bottom: 1.5mm;
     }
@@ -356,7 +378,7 @@
     .panel-back {
       display: flex;
       flex-direction: column;
-      padding: 10mm 10mm;
+      padding: 10mm 10mm 8mm 10mm;
     }
 
     .back-header {
@@ -367,15 +389,15 @@
     }
 
     .mini-logo {
-      width: 20mm;
+      width: 41.6mm;
       height: auto;
-      margin-bottom: calc(5mm + 40px);
-      filter: drop-shadow(0 1px 4px rgba(0,0,0,0.3));
+      margin-bottom: 10mm;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
     }
 
     .back-title {
       font-family: 'Fraunces', Georgia, serif;
-      font-weight: 600;
+      font-weight: 400;
       font-style: italic;
       font-size: 14pt;
       font-variation-settings: 'SOFT' 80, 'WONK' 1;
@@ -427,10 +449,6 @@
       object-fit: contain;
     }
 
-    .douceurs-grid .section-title {
-      font-size: 11pt;
-    }
-
     .douceurs-grid table {
       font-size: 8.5pt;
     }
@@ -442,22 +460,47 @@
     .panel-footer {
       margin-top: auto;
       text-align: center;
-      border-top: 0.2mm solid rgba(228,180,67,0.4);
       padding-top: 2mm;
+    }
+
+    .panel-footer::before {
+      content: '';
+      display: block;
+      width: 80mm;
+      height: 1px;
+      background-color: #ddd5c5;
+      border-radius: 1px;
+      opacity: 0.5;
+      margin: 0 auto 4mm auto;
     }
 
     .panel-footer p {
       font-family: 'DM Sans', sans-serif;
-      font-size: 7pt;
-      color: rgba(250,247,240,0.55);
+      font-size: 8pt;
+      color: #8e7d6a;
       font-weight: 400;
-      letter-spacing: 0.08em;
-      line-height: 1.5;
+      letter-spacing: 0.05em;
+      line-height: 1.6;
     }
 
-    .panel-footer .accent {
-      color: #e4b443;
-      margin: 0 0.5mm;
+    .panel-footer .sep {
+      margin: 0 0.3em;
+    }
+
+    /* ── Service mention ── */
+    .service-mention {
+      text-align: center;
+      margin-top: auto;
+      padding-top: 2mm;
+    }
+
+    .service-mention p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 8pt;
+      color: #8e7d6a;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      line-height: 1.6;
     }
 
     /* ══════════════════════════════════
@@ -571,13 +614,13 @@
           <h2 class="section-title">Cr&ecirc;pes</h2>
           <table>
             <tbody>
-              <tr><td class="col-product">Cr&ecirc;pe au Sucre</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product">Cr&ecirc;pe Nutella</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product">Cr&ecirc;pe Citron</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product">Cr&ecirc;pe Cr&egrave;me de Marron</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product">Cr&ecirc;pe Confiture ou Miel</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product">Cr&ecirc;pe Chantilly</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product">Cr&ecirc;pe Sp&eacute;culoos</td><td class="col-price">&mdash;</td></tr>
+              <tr><td class="col-product">Cr&ecirc;pe au Sucre</td><td class="col-price">3,00&euro;</td></tr>
+              <tr><td class="col-product">Cr&ecirc;pe Nutella</td><td class="col-price">3,50&euro;</td></tr>
+              <tr><td class="col-product">Cr&ecirc;pe Citron</td><td class="col-price">3,50&euro;</td></tr>
+              <tr><td class="col-product">Cr&ecirc;pe Cr&egrave;me de Marron</td><td class="col-price">3,50&euro;</td></tr>
+              <tr><td class="col-product">Cr&ecirc;pe Confiture ou Miel</td><td class="col-price">3,50&euro;</td></tr>
+              <tr><td class="col-product">Cr&ecirc;pe Chantilly</td><td class="col-price">3,50&euro;</td></tr>
+              <tr><td class="col-product">Cr&ecirc;pe Sp&eacute;culoos</td><td class="col-price">3,50&euro;</td></tr>
             </tbody>
           </table>
         </section>
@@ -586,11 +629,11 @@
           <h2 class="section-title">Gaufres</h2>
           <table>
             <tbody>
-              <tr><td class="col-product">Gaufre au Sucre</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product">Gaufre au Nutella</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product">Gaufre Confiture ou Miel</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product">Gaufre Chantilly</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product">Gaufre Sp&eacute;culoos</td><td class="col-price">&mdash;</td></tr>
+              <tr><td class="col-product">Gaufre au Sucre</td><td class="col-price">3,50&euro;</td></tr>
+              <tr><td class="col-product">Gaufre au Nutella</td><td class="col-price">4,00&euro;</td></tr>
+              <tr><td class="col-product">Gaufre Confiture ou Miel</td><td class="col-price">4,00&euro;</td></tr>
+              <tr><td class="col-product">Gaufre Chantilly</td><td class="col-price">4,00&euro;</td></tr>
+              <tr><td class="col-product">Gaufre Sp&eacute;culoos</td><td class="col-price">4,00&euro;</td></tr>
             </tbody>
           </table>
         </section>
@@ -603,19 +646,19 @@
           <h2 class="section-title">Glaces</h2>
           <table>
             <tbody>
-              <tr><td class="col-product">Coupe 1 Boule</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product">Coupe 2 Boules</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product">Coupe 3 Boules</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product">Dame Blanche</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product">Caf&eacute; ou Chocolat ou Caramel Li&eacute;geois</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product">Banana Split</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product supplement">Suppl&eacute;ment Boule de Glace</td><td class="col-price">&mdash;</td></tr>
-              <tr><td class="col-product supplement">Suppl&eacute;ment Chantilly</td><td class="col-price">&mdash;</td></tr>
+              <tr><td class="col-product">Coupe 1 Boule</td><td class="col-price">3,00&euro;</td></tr>
+              <tr><td class="col-product">Coupe 2 Boules</td><td class="col-price">5,00&euro;</td></tr>
+              <tr><td class="col-product">Coupe 3 Boules</td><td class="col-price">6,50&euro;</td></tr>
+              <tr><td class="col-product">Dame Blanche</td><td class="col-price">6,90&euro;</td></tr>
+              <tr><td class="col-product">Caf&eacute; ou Chocolat Li&eacute;geois</td><td class="col-price">6,90&euro;</td></tr>
+              <tr><td class="col-product">Banana Split</td><td class="col-price">6,90&euro;</td></tr>
+              <tr><td class="col-product supplement">Suppl&eacute;ment boule de glace</td><td class="col-price">+2,00&euro;</td></tr>
+              <tr><td class="col-product supplement">Suppl&eacute;ment chantilly</td><td class="col-price">+1,00&euro;</td></tr>
             </tbody>
           </table>
         </section>
         <div class="douceurs-photo">
-          <img src="../public/images/products/crepe-nutella.png" alt="Cr&ecirc;pe Nutella" loading="eager">
+          <img src="../../public/images/products/crepe-nutella.png" alt="Cr&ecirc;pe Nutella" loading="eager">
         </div>
       </div>
 
@@ -623,16 +666,8 @@
 
     <!-- Footer -->
     <div class="panel-footer">
-      <p>
-        La Pause<span class="accent">&middot;</span>Brasserie<span class="accent">&middot;</span>Glacier<span class="accent">&middot;</span>Caf&eacute;
-        <span class="accent">&mdash;</span>
-        Galerie Narbonne, 79 Route de Perpignan, 11100 Narbonne
-      </p>
-      <p>
-        04 68 91 84 59
-        <span class="accent">&mdash;</span>
-        Lun&ndash;Sam 08h30&ndash;20h30
-      </p>
+      <p>04 68 91 84 59<span class="sep">&bull;</span>La Galerie Narbonne</p>
+      <p>Lun&ndash;Sam 08h30&ndash;20h00</p>
     </div>
 
   </div>
@@ -700,10 +735,10 @@
     <div class="cover-images-wrapper">
       <div class="cover-images">
         <div class="cover-img-burger">
-          <img src="../public/images/products/burger-boeuf-bacon.jpg" alt="Burger" loading="eager">
+          <img src="../../public/images/products/burger-boeuf-bacon.jpg" alt="Burger" loading="eager">
         </div>
         <div class="cover-img-pates">
-          <img src="../public/images/products/linguines-pesto-cropped.jpg" alt="Linguines Pesto" loading="eager">
+          <img src="../../public/images/products/linguines-pesto-cropped.jpg" alt="Linguines Pesto" loading="eager">
         </div>
       </div>
     </div>
@@ -713,8 +748,8 @@
       <div class="cover-tagline">Prenons soin de votre pause.</div>
       <div class="cover-divider-thin"></div>
       <div class="cover-contact">
-        04 68 91 84 59<span class="sep">&bull;</span>Galerie Narbonne<br>
-        Lun&ndash;Sam 08h30&ndash;20h30
+        04 68 91 84 59<span class="sep">&bull;</span>La Galerie Narbonne<br>
+        Lun&ndash;Sam 08h30&ndash;20h00
       </div>
     </div>
 
@@ -736,10 +771,11 @@
       <h2 class="section-title">Salades</h2>
       <table>
         <tbody>
-          <tr><td class="col-product">Salade C&eacute;sar</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Salade Italienne</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Salade de Ch&egrave;vre Chaud</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Salade de G&eacute;siers &amp; Magrets</td><td class="col-price">&mdash;</td></tr>
+          <tr><td class="col-product">Salade C&eacute;sar<br><span class="product-note">Poulet, parmesan, cro&ucirc;tons, tomates cerise, sauce C&eacute;sar</span></td><td class="col-price">13,90&euro;</td></tr>
+          <tr><td class="col-product">Salade Parisienne<br><span class="product-note">Salade verte, jambon blanc, emmental, &oelig;uf dur, tomates cerise, olives, cornichons, cro&ucirc;tons, vinaigrette &agrave; l&rsquo;ancienne</span></td><td class="col-price">13,90&euro;</td></tr>
+          <tr><td class="col-product">Salade de Ch&egrave;vre Chaud<br><span class="product-note">&OElig;uf, pain toast&eacute;, ch&egrave;vre, tomates cerise, balsamique, miel</span></td><td class="col-price">12,90&euro;</td></tr>
+          <tr><td class="col-product">Salade Fra&icirc;cheur Avocat</td><td class="col-price">12,90&euro;</td></tr>
+          <tr><td class="col-product">Salade du Sud-Ouest<br><span class="product-note">G&eacute;siers, tomates cerise, vinaigre balsamique, magret s&eacute;ch&eacute;</span></td><td class="col-price">13,90&euro;</td></tr>
         </tbody>
       </table>
     </section>
@@ -748,20 +784,32 @@
     <section>
       <h2 class="section-title">Burgers</h2>
       <table>
+        <thead>
+          <tr class="price-header"><th></th><th>Simple</th><th>Double</th></tr>
+        </thead>
         <tbody>
-          <tr><td class="col-product">Cheese Burger</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Bacon Burger</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Chicken Burger</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Fish Burger</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Double Steak ou Chicken ou Fish</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product supplement">Suppl&eacute;ment Bacon ou Cheddar</td><td class="col-price">&mdash;</td></tr>
+          <tr><td class="col-product">Cheese Burger<br><span class="product-note">Steak hach&eacute;, cheddar, cornichons, ketchup, frites</span></td><td class="col-price-sm">13,50&euro;</td><td class="col-price-sm">16,50&euro;</td></tr>
+          <tr><td class="col-product">Bacon Burger<br><span class="product-note">Steak hach&eacute;, cheddar, bacon, salade, oignon, sauce, frites</span></td><td class="col-price-sm">14,50&euro;</td><td class="col-price-sm">17,50&euro;</td></tr>
+          <tr><td class="col-product">Chicken Burger<br><span class="product-note">Poulet crispy, cheddar, salade, oignon, sauce bbq, frites</span></td><td class="col-price-sm">12,90&euro;</td><td class="col-price-sm">15,90&euro;</td></tr>
+          <tr><td class="col-product">Fish Burger<br><span class="product-note">Fish pan&eacute;, sauce tartare, salade, cornichons, cheddar, frites</span></td><td class="col-price-sm">13,90&euro;</td><td class="col-price-sm">16,90&euro;</td></tr>
+          <tr><td class="col-product supplement">Suppl&eacute;ment Bacon ou Cheddar</td><td class="col-price-sm" colspan="2">+1,00&euro;</td></tr>
         </tbody>
       </table>
     </section>
 
-    <!-- Photo salade -->
-    <div class="page2-photo">
-      <img src="../public/images/products/salade-gesiers-magret.jpg" alt="Salade de Gésiers">
+    <!-- Menu Enfant -->
+    <div class="formule-box">
+      <div class="formule-title">Menu Enfant</div>
+      <table>
+        <tbody>
+          <tr><td class="col-product">P&rsquo;tit Burger<br><span class="product-note">Bun petit, steak hach&eacute;, cheddar, salade, ketchup</span></td><td class="col-price">6,00&euro;</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Service mention -->
+    <div class="service-mention">
+      <p>Tous nos plats sont servis de 11h30 &agrave; 14h30</p>
     </div>
 
   </div>
@@ -774,10 +822,11 @@
       <h2 class="section-title">P&acirc;tes</h2>
       <table>
         <tbody>
-          <tr><td class="col-product">Bolognaise</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Carbonara</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Foresti&egrave;re</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Pesto</td><td class="col-price">&mdash;</td></tr>
+          <tr><td class="col-product">Bolognaise<br><span class="product-note">Viande hach&eacute;e, tomates concass&eacute;es, oignon, carotte, ail</span></td><td class="col-price">12,90&euro;</td></tr>
+          <tr><td class="col-product">Carbonara<br><span class="product-note">Lardons, cr&egrave;me, jaune d&rsquo;&oelig;uf, oignon, emmental</span></td><td class="col-price">12,90&euro;</td></tr>
+          <tr><td class="col-product">Foresti&egrave;re</td><td class="col-price">12,90&euro;</td></tr>
+          <tr><td class="col-product">Veggie</td><td class="col-price">12,90&euro;</td></tr>
+          <tr><td class="col-product">Pesto Poulet</td><td class="col-price">12,90&euro;</td></tr>
         </tbody>
       </table>
     </section>
@@ -787,9 +836,9 @@
       <h2 class="section-title">Plats Brasserie</h2>
       <table>
         <tbody>
-          <tr><td class="col-product">Le Steak-Frites de la Pause</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Le Steak &agrave; Cheval de la Pause</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Le Fish &amp; Chips de la Pause</td><td class="col-price">&mdash;</td></tr>
+          <tr><td class="col-product">Steak-Frites<br><span class="product-note">Steak hach&eacute;, frites</span></td><td class="col-price">11,90&euro;</td></tr>
+          <tr><td class="col-product">Steak &agrave; Cheval<br><span class="product-note">Steak hach&eacute;, &oelig;uf, frites</span></td><td class="col-price">13,50&euro;</td></tr>
+          <tr><td class="col-product">Fish &amp; Chips<br><span class="product-note">Fish pan&eacute;, citron, sauce tartare, frites</span></td><td class="col-price">13,90&euro;</td></tr>
         </tbody>
       </table>
     </section>
@@ -799,9 +848,9 @@
       <h2 class="section-title">Accompagnements</h2>
       <table>
         <tbody>
-          <tr><td class="col-product">Frites</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">P&acirc;tes</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Salade</td><td class="col-price">&mdash;</td></tr>
+          <tr><td class="col-product">Frites</td><td class="col-price">3,50&euro;</td></tr>
+          <tr><td class="col-product">P&acirc;tes</td><td class="col-price">3,50&euro;</td></tr>
+          <tr><td class="col-product">Salade</td><td class="col-price">3,50&euro;</td></tr>
         </tbody>
       </table>
     </section>
@@ -811,14 +860,19 @@
       <h2 class="section-title">Desserts</h2>
       <table>
         <tbody>
-          <tr><td class="col-product">Moelleux au Chocolat</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Cr&egrave;me Br&ucirc;l&eacute;e</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Fromage Blanc Coulis</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Salade de Fruits</td><td class="col-price">&mdash;</td></tr>
-          <tr><td class="col-product">Caf&eacute; Gourmand</td><td class="col-price">&mdash;</td></tr>
+          <tr><td class="col-product">Moelleux au Chocolat</td><td class="col-price">5,50&euro;</td></tr>
+          <tr><td class="col-product">Cr&egrave;me Br&ucirc;l&eacute;e</td><td class="col-price">5,50&euro;</td></tr>
+          <tr><td class="col-product">Fromage Blanc Coulis</td><td class="col-price">5,50&euro;</td></tr>
+          <tr><td class="col-product">Salade de Fruits</td><td class="col-price">5,50&euro;</td></tr>
+          <tr><td class="col-product">Caf&eacute; Gourmand</td><td class="col-price">6,50&euro;</td></tr>
         </tbody>
       </table>
     </section>
+
+    <!-- Service mention -->
+    <div class="service-mention">
+      <p>Tous nos plats sont servis de 11h30 &agrave; 14h30</p>
+    </div>
 
   </div>
 
