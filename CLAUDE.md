@@ -1,6 +1,4 @@
-# CLAUDE.md
-
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+# Client La Pause — Site Vitrine Restaurant
 
 ## Statut
 
@@ -10,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | **Type** | Site vitrine stratégique restaurant |
 | **Pipeline** | A01-Init ✅ → A02-Brand ✅ → A03-Art Direction ✅ → A04-Structure (prochaine) |
 | **Client** | La Pause |
-| **Optimisation Pipeline** | En cours — A03 exécuté (v2.0) | Voir `pipeline/OPTIMIZATION.md` |
+| **Optimisation Pipeline** | En cours — A03 exécuté (v2.0) — Voir `pipeline/OPTIMIZATION.md` |
 
 ## Identité Client
 

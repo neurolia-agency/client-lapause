@@ -18,8 +18,8 @@
 
     body {
       font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
-      font-size: 9pt;
-      line-height: 1.4;
+      font-size: 8.5pt;
+      line-height: 1.35;
       color: #faf7f0;
       background: #1a0e08;
       -webkit-print-color-adjust: exact;
@@ -125,7 +125,7 @@
     .cover-img-burger {
       position: relative;
       z-index: 1;
-      border: 2px solid rgba(214, 143, 89, 0.25);
+      border: 1px solid rgba(214, 143, 89, 1);
     }
 
     .cover-img-burger img {
@@ -143,7 +143,7 @@
       width: 47mm;
       height: 47mm;
       overflow: hidden;
-      border: 2px solid rgba(214, 143, 89, 0.25);
+      border: 1px solid rgba(214, 143, 89, 1);
       box-shadow: -3px 3px 12px rgba(0,0,0,0.45);
     }
 
@@ -220,8 +220,8 @@
     .panel-content {
       display: flex;
       flex-direction: column;
-      padding: 10mm 10mm 8mm 10mm;
-      gap: 2.5mm;
+      padding: 8mm 10mm 6mm 10mm;
+      gap: 2mm;
     }
 
     /* ── Section Titles ── */
@@ -229,11 +229,11 @@
       font-family: 'Fraunces', Georgia, serif;
       font-weight: 400;
       font-style: italic;
-      font-size: 13pt;
+      font-size: 11.5pt;
       font-variation-settings: 'SOFT' 80, 'WONK' 1;
       color: #e4b443;
       text-align: center;
-      margin-bottom: 1.5mm;
+      margin-bottom: 1mm;
       padding-bottom: 1mm;
       position: relative;
     }
@@ -268,12 +268,12 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 9pt;
+      font-size: 8.5pt;
       table-layout: auto;
     }
 
     table td {
-      padding: 1.5mm 0;
+      padding: 1mm 0;
       border-bottom: 0.1mm solid rgba(250,247,240,0.1);
       vertical-align: baseline;
     }
@@ -320,10 +320,17 @@
     }
 
     .product-note {
-      font-size: 7.5pt;
+      font-size: 6.5pt;
       font-style: italic;
       color: rgba(250,247,240,0.55);
       font-weight: 400;
+    }
+
+    .section-note {
+      font-size: 6.5pt;
+      font-style: italic;
+      color: rgba(250,247,240,0.55);
+      margin-bottom: 1mm;
     }
 
     .supplement {
@@ -343,14 +350,14 @@
       margin-top: auto;
       border: 0.5px solid rgba(228,180,67,0.5);
       border-radius: 3mm;
-      padding: 3.5mm 4mm;
+      padding: 2.5mm 4mm;
     }
 
     .formule-box .formule-title {
       font-family: 'Fraunces', Georgia, serif;
       font-weight: 400;
       font-style: italic;
-      font-size: 11pt;
+      font-size: 10pt;
       font-variation-settings: 'SOFT' 80, 'WONK' 1;
       color: #e4b443;
       margin-bottom: 1.5mm;
@@ -771,11 +778,11 @@
       <h2 class="section-title">Salades</h2>
       <table>
         <tbody>
-          <tr><td class="col-product">Salade C&eacute;sar<br><span class="product-note">Poulet, parmesan, cro&ucirc;tons, tomates cerise, sauce C&eacute;sar</span></td><td class="col-price">13,90&euro;</td></tr>
-          <tr><td class="col-product">Salade Parisienne<br><span class="product-note">Salade verte, jambon blanc, emmental, &oelig;uf dur, tomates cerise, olives, cornichons, cro&ucirc;tons, vinaigrette &agrave; l&rsquo;ancienne</span></td><td class="col-price">13,90&euro;</td></tr>
-          <tr><td class="col-product">Salade de Ch&egrave;vre Chaud<br><span class="product-note">&OElig;uf, pain toast&eacute;, ch&egrave;vre, tomates cerise, balsamique, miel</span></td><td class="col-price">12,90&euro;</td></tr>
-          <tr><td class="col-product">Salade Fra&icirc;cheur Avocat</td><td class="col-price">12,90&euro;</td></tr>
-          <tr><td class="col-product">Salade du Sud-Ouest<br><span class="product-note">G&eacute;siers, tomates cerise, vinaigre balsamique, magret s&eacute;ch&eacute;</span></td><td class="col-price">13,90&euro;</td></tr>
+          <tr><td class="col-product">Salade C&eacute;sar Brasserie<br><span class="product-note">Salade verte, poulet r&ocirc;ti &eacute;minc&eacute;, copeaux de parmesan, cro&ucirc;tons dor&eacute;s, tomates cerises, demi-&oelig;uf et sauce C&eacute;sar</span></td><td class="col-price">12,90&euro;</td></tr>
+          <tr><td class="col-product">Salade Ch&egrave;vre Chaud Gourmande<br><span class="product-note">Salade verte, toast de ch&egrave;vre chaud gratin&eacute;, tomates cerises, demi-&oelig;uf, &eacute;clats de noix et vinaigrette miel balsamique</span></td><td class="col-price">13,90&euro;</td></tr>
+          <tr><td class="col-product">Salade Parisienne Tradition<br><span class="product-note">Salade verte, jambon blanc, emmental, &oelig;uf dur, tomates cerises, olives, cornichons et cro&ucirc;tons, vinaigrette &agrave; l&rsquo;ancienne</span></td><td class="col-price">13,90&euro;</td></tr>
+          <tr><td class="col-product">Salade Sud-Ouest Tradition<br><span class="product-note">Salade verte, g&eacute;siers de volaille, magret s&eacute;ch&eacute;, tomates cerises, champignons, cro&ucirc;tons grill&eacute;s, &eacute;clats de noix et vinaigrette balsamique</span></td><td class="col-price">13,90&euro;</td></tr>
+          <tr><td class="col-product">Salade Fra&icirc;cheur Avocat<br><span class="product-note">Salade verte, avocat, tomates cerises, concombre, graines croquantes, copeaux de parmesan et vinaigrette citronn&eacute;e</span></td><td class="col-price">12,90&euro;</td></tr>
         </tbody>
       </table>
     </section>
@@ -783,15 +790,16 @@
     <!-- Burgers -->
     <section>
       <h2 class="section-title">Burgers</h2>
+      <p class="section-note">Tous nos burgers sont servis avec frites maison.</p>
       <table>
         <thead>
           <tr class="price-header"><th></th><th>Simple</th><th>Double</th></tr>
         </thead>
         <tbody>
-          <tr><td class="col-product">Cheese Burger<br><span class="product-note">Steak hach&eacute;, cheddar, cornichons, ketchup, frites</span></td><td class="col-price-sm">13,50&euro;</td><td class="col-price-sm">16,50&euro;</td></tr>
-          <tr><td class="col-product">Bacon Burger<br><span class="product-note">Steak hach&eacute;, cheddar, bacon, salade, oignon, sauce, frites</span></td><td class="col-price-sm">14,50&euro;</td><td class="col-price-sm">17,50&euro;</td></tr>
-          <tr><td class="col-product">Chicken Burger<br><span class="product-note">Poulet crispy, cheddar, salade, oignon, sauce bbq, frites</span></td><td class="col-price-sm">12,90&euro;</td><td class="col-price-sm">15,90&euro;</td></tr>
-          <tr><td class="col-product">Fish Burger<br><span class="product-note">Fish pan&eacute;, sauce tartare, salade, cornichons, cheddar, frites</span></td><td class="col-price-sm">13,90&euro;</td><td class="col-price-sm">16,90&euro;</td></tr>
+          <tr><td class="col-product">Cheeseburger<br><span class="product-note">Steak hach&eacute;, cheddar fondant, salade verte, cornichons et sauce burger dans un bun brioch&eacute;</span></td><td class="col-price-sm">13,50&euro;</td><td class="col-price-sm">16,50&euro;</td></tr>
+          <tr><td class="col-product">Bacon Burger<br><span class="product-note">Steak hach&eacute;, cheddar fondant, bacon croustillant, salade verte, oignons et sauce burger dans un bun brioch&eacute;</span></td><td class="col-price-sm">14,50&euro;</td><td class="col-price-sm">17,50&euro;</td></tr>
+          <tr><td class="col-product">Chicken Burger<br><span class="product-note">Poulet croustillant, cheddar fondant, salade verte, oignons et sauce barbecue dans un bun brioch&eacute;</span></td><td class="col-price-sm">12,90&euro;</td><td class="col-price-sm">15,90&euro;</td></tr>
+          <tr><td class="col-product">Fish Burger<br><span class="product-note">Filet de poisson pan&eacute;, cheddar fondant, salade verte, cornichons et sauce tartare dans un bun brioch&eacute;</span></td><td class="col-price-sm">13,90&euro;</td><td class="col-price-sm">16,90&euro;</td></tr>
           <tr><td class="col-product supplement">Suppl&eacute;ment Bacon ou Cheddar</td><td class="col-price-sm" colspan="2">+1,00&euro;</td></tr>
         </tbody>
       </table>
@@ -802,7 +810,7 @@
       <div class="formule-title">Menu Enfant</div>
       <table>
         <tbody>
-          <tr><td class="col-product">P&rsquo;tit Burger<br><span class="product-note">Bun petit, steak hach&eacute;, cheddar, salade, ketchup</span></td><td class="col-price">6,00&euro;</td></tr>
+          <tr><td class="col-product">Menu Enfant<br><span class="product-note">Steak hach&eacute; ou burger ou jambon p&acirc;tes + frites + boule de glace ou compote + sirop ou diabolo ou Coca / Capri Sun</span></td><td class="col-price">6,00&euro;</td></tr>
         </tbody>
       </table>
     </div>
@@ -822,11 +830,10 @@
       <h2 class="section-title">P&acirc;tes</h2>
       <table>
         <tbody>
-          <tr><td class="col-product">Bolognaise<br><span class="product-note">Viande hach&eacute;e, tomates concass&eacute;es, oignon, carotte, ail</span></td><td class="col-price">12,90&euro;</td></tr>
-          <tr><td class="col-product">Carbonara<br><span class="product-note">Lardons, cr&egrave;me, jaune d&rsquo;&oelig;uf, oignon, emmental</span></td><td class="col-price">12,90&euro;</td></tr>
-          <tr><td class="col-product">Foresti&egrave;re</td><td class="col-price">12,90&euro;</td></tr>
-          <tr><td class="col-product">Veggie</td><td class="col-price">12,90&euro;</td></tr>
-          <tr><td class="col-product">Pesto Poulet</td><td class="col-price">12,90&euro;</td></tr>
+          <tr><td class="col-product">Linguine Bolognaise<br><span class="product-note">Sauce tomate mijot&eacute;e &agrave; la viande de b&oelig;uf</span></td><td class="col-price">12,90&euro;</td></tr>
+          <tr><td class="col-product">Linguine Carbonara<br><span class="product-note">Cr&egrave;me, lardons et parmesan</span></td><td class="col-price">12,90&euro;</td></tr>
+          <tr><td class="col-product">Linguine Poulet Cr&egrave;me<br><span class="product-note">Poulet &eacute;minc&eacute;, cr&egrave;me et champignons, parmesan</span></td><td class="col-price">12,90&euro;</td></tr>
+          <tr><td class="col-product">Linguine Pesto<br><span class="product-note">Pesto, tomates cerises et parmesan</span></td><td class="col-price">12,90&euro;</td></tr>
         </tbody>
       </table>
     </section>
@@ -836,9 +843,9 @@
       <h2 class="section-title">Plats Brasserie</h2>
       <table>
         <tbody>
-          <tr><td class="col-product">Steak-Frites<br><span class="product-note">Steak hach&eacute;, frites</span></td><td class="col-price">11,90&euro;</td></tr>
-          <tr><td class="col-product">Steak &agrave; Cheval<br><span class="product-note">Steak hach&eacute;, &oelig;uf, frites</span></td><td class="col-price">13,50&euro;</td></tr>
-          <tr><td class="col-product">Fish &amp; Chips<br><span class="product-note">Fish pan&eacute;, citron, sauce tartare, frites</span></td><td class="col-price">13,90&euro;</td></tr>
+          <tr><td class="col-product">Steak Hach&eacute; de la Pause<br><span class="product-note">Steak hach&eacute; grill&eacute; servi avec frites maison</span></td><td class="col-price">12,90&euro;</td></tr>
+          <tr><td class="col-product">Steak &agrave; Cheval de la Pause<br><span class="product-note">Steak hach&eacute; grill&eacute; surmont&eacute; d&rsquo;un &oelig;uf au plat, servi avec frites maison</span></td><td class="col-price">13,50&euro;</td></tr>
+          <tr><td class="col-product">Fish &amp; Chips de la Pause<br><span class="product-note">Filet de poisson pan&eacute;, frites maison et sauce tartare</span></td><td class="col-price">13,90&euro;</td></tr>
         </tbody>
       </table>
     </section>
@@ -848,9 +855,7 @@
       <h2 class="section-title">Accompagnements</h2>
       <table>
         <tbody>
-          <tr><td class="col-product">Frites</td><td class="col-price">3,50&euro;</td></tr>
-          <tr><td class="col-product">P&acirc;tes</td><td class="col-price">3,50&euro;</td></tr>
-          <tr><td class="col-product">Salade</td><td class="col-price">3,50&euro;</td></tr>
+          <tr><td class="col-product">Suppl&eacute;ment accompagnement<br><span class="product-note">Frites maison, linguine, salade</span></td><td class="col-price">3,00&euro;</td></tr>
         </tbody>
       </table>
     </section>
@@ -860,11 +865,11 @@
       <h2 class="section-title">Desserts</h2>
       <table>
         <tbody>
-          <tr><td class="col-product">Moelleux au Chocolat</td><td class="col-price">5,50&euro;</td></tr>
-          <tr><td class="col-product">Cr&egrave;me Br&ucirc;l&eacute;e</td><td class="col-price">5,50&euro;</td></tr>
-          <tr><td class="col-product">Fromage Blanc Coulis</td><td class="col-price">5,50&euro;</td></tr>
-          <tr><td class="col-product">Salade de Fruits</td><td class="col-price">5,50&euro;</td></tr>
-          <tr><td class="col-product">Caf&eacute; Gourmand</td><td class="col-price">6,50&euro;</td></tr>
+          <tr><td class="col-product">Moelleux au Chocolat<br><span class="product-note">Servi ti&egrave;de</span></td><td class="col-price">5,50&euro;</td></tr>
+          <tr><td class="col-product">Cr&egrave;me Br&ucirc;l&eacute;e<br><span class="product-note">Caram&eacute;lis&eacute;e &agrave; la cassonade</span></td><td class="col-price">5,50&euro;</td></tr>
+          <tr><td class="col-product">Fromage Blanc<br><span class="product-note">Nature ou coulis de fruits rouges, miel ou cr&egrave;me de marron</span></td><td class="col-price">5,50&euro;</td></tr>
+          <tr><td class="col-product">Salade de Fruits Frais</td><td class="col-price">5,50&euro;</td></tr>
+          <tr><td class="col-product">Caf&eacute; Gourmand<br><span class="product-note">Assortiment de douceurs maison et caf&eacute;</span></td><td class="col-price">6,50&euro;</td></tr>
         </tbody>
       </table>
     </section>

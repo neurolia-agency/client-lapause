@@ -50,13 +50,11 @@ async function generatePDF(browser, config) {
   const rawMB = (rawStats.size / (1024 * 1024)).toFixed(2);
   console.log(`  → Raw size: ${rawMB} MB`);
 
-  // Compress with Ghostscript — PDF 1.4 with embedded fonts, image downsampling
+  // Compress with Ghostscript — PDF 1.4, /printer preset, forced sRGB (macOS CoreGraphics compat)
   const compressed = config.output.replace('.pdf', '-tmp.pdf');
-  const gsImageOpts = '-dColorImageResolution=150 -dGrayImageResolution=150 -dMonoImageResolution=150 -dDownsampleColorImages=true -dDownsampleGrayImages=true -dDownsampleMonoImages=true';
-  const gsFontOpts = '-dEmbedAllFonts=true -dSubsetFonts=true -dCompressFonts=true';
 
   try {
-    execSync(`gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dBATCH -dNOPAUSE -dQUIET ${gsFontOpts} ${gsImageOpts} -sOutputFile="${compressed}" "${config.output}"`);
+    execSync(`gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dAutoRotatePages=/None -sColorConversionStrategy=sRGB -sProcessColorModel=DeviceRGB -dConvertCMYKImagesToRGB=true -dBATCH -dNOPAUSE -dQUIET -sOutputFile="${compressed}" "${config.output}"`);
     fs.renameSync(compressed, config.output);
     console.log(`  → Compressed with Ghostscript`);
   } catch {
