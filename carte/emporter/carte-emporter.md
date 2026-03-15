@@ -1,14 +1,18 @@
-## Sandwichs 
-* Sandwich Jambon Beurre 
-* Sandwich Poulet 
-* Sandwich Thon 
-* Sandwich Fraîcheur 
-* Sandwich Tomate Mozza 
+## Sandwichs
+* Sandwich Jambon Beurre
+* Sandwich Fraîcheur
+* Sandwich Tomate Mozza
+* Sandwich Rosette
 
-## Paninis 
-* Panini Jambon 
-* Panini Poulet 
+## Pains Bagnat
+* Pain Bagnat Poulet
+* Pain Bagnat Thon
+
+## Paninis
+* Panini Jambon
+* Panini Poulet
 * Panini 3 Fromages
+* Panini Chèvre Miel
 
 ## Crêpes
 * Crêpe au sucre

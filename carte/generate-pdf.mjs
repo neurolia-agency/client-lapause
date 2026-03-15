@@ -18,8 +18,8 @@ const configs = [
     name: 'carte-sur-place',
     input: path.join(__dirname, 'sur-place/carte-sur-place.html'),
     output: path.join(__dirname, 'sur-place/carte-sur-place-print-mail.pdf'),
-    width: '297mm',
-    height: '210mm',
+    width: '420mm',
+    height: '297mm',
   },
 ];
 
@@ -50,13 +50,17 @@ async function generatePDF(browser, config) {
   const rawMB = (rawStats.size / (1024 * 1024)).toFixed(2);
   console.log(`  → Raw size: ${rawMB} MB`);
 
-  // Compress with Ghostscript — PDF 1.4, /printer preset, forced sRGB (macOS CoreGraphics compat)
+  // Compress with Ghostscript — PDF 1.4, /prepress quality, forced sRGB, explicit page size
   const compressed = config.output.replace('.pdf', '-tmp.pdf');
 
+  // Convert mm to points (1mm = 2.83465pt)
+  const widthPt = parseFloat(config.width) * 2.83465;
+  const heightPt = parseFloat(config.height) * 2.83465;
+
   try {
-    execSync(`gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dAutoRotatePages=/None -sColorConversionStrategy=sRGB -sProcessColorModel=DeviceRGB -dConvertCMYKImagesToRGB=true -dBATCH -dNOPAUSE -dQUIET -sOutputFile="${compressed}" "${config.output}"`);
+    execSync(`gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -dAutoRotatePages=/None -sColorConversionStrategy=sRGB -sProcessColorModel=DeviceRGB -dConvertCMYKImagesToRGB=true -dEmbedAllFonts=true -dSubsetFonts=true -dCompressFonts=true -dDownsampleColorImages=false -dDownsampleGrayImages=false -dDownsampleMonoImages=false -dDEVICEWIDTHPOINTS=${widthPt.toFixed(2)} -dDEVICEHEIGHTPOINTS=${heightPt.toFixed(2)} -dFIXEDMEDIA -dBATCH -dNOPAUSE -dQUIET -sOutputFile="${compressed}" "${config.output}"`);
     fs.renameSync(compressed, config.output);
-    console.log(`  → Compressed with Ghostscript`);
+    console.log(`  → Compressed with Ghostscript (${widthPt.toFixed(0)}×${heightPt.toFixed(0)} pt)`);
   } catch {
     console.log(`  ⚠ Ghostscript not available, keeping raw PDF`);
     if (fs.existsSync(compressed)) fs.unlinkSync(compressed);
